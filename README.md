@@ -6,8 +6,6 @@ A simple php script to record click count and redirect a url.
 
 This project is written in PHP, using MySQL as its primary database.
 
-- Put both `redirect.php` and `click.php` to your server for public access.
-
 - Modify MySQL information at the beginning of both `redirect.php` and `click.php` according to your settings
 
 ```
@@ -17,6 +15,8 @@ $username = "user";             // Username for you database
 $password = "pass";             // Password with your username
 $dbname = "database";           // Database Name
 ```
+
+- Put modified `redirect.php` and `click.php` to your server for public access.
 
 ### Usage
 
