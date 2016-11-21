@@ -1,6 +1,6 @@
 # PHP Redirect Click Counter
 
-A simple php script to record click and redirect a url.
+A simple php script to record click count and redirect a url.
 
 ### Installation
 
@@ -22,11 +22,11 @@ To see click records, just visit
 
 To create/update a record and redirect to a url:
 
-    http://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com
+    [http://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com](http://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com)
 
 To view records:
 
-    http://demo.steve-luo.com/php-redirect-click-counter/clicks.php
+    [http://demo.steve-luo.com/php-redirect-click-counter/clicks.php](http://demo.steve-luo.com/php-redirect-click-counter/clicks.php)
 
 ### License
 
