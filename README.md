@@ -21,12 +21,10 @@ To see click records, just visit
 ### Demo
 
 To create/update a record and redirect to a url:
-
-    [http://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com](http://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com)
+[http://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com](http://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com)
 
 To view records:
-
-    [http://demo.steve-luo.com/php-redirect-click-counter/clicks.php](http://demo.steve-luo.com/php-redirect-click-counter/clicks.php)
+[http://demo.steve-luo.com/php-redirect-click-counter/clicks.php](http://demo.steve-luo.com/php-redirect-click-counter/clicks.php)
 
 ### License
 
