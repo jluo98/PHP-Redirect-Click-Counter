@@ -10,11 +10,13 @@ This project is written in PHP, using MySQL as its primary database.
 
 - Modify MySQL information at the beginning of both `redirect.php` and `click.php` according to your settings
 
-    // MySQL Database
-    $servername = "localhost";      // MySQL Host
-    $username = "user";             // Username for you database
-    $password = "pass";             // Password with your username
-    $dbname = "database";           // Database Name
+```
+// MySQL Database
+$servername = "localhost";      // MySQL Host
+$username = "user";             // Username for you database
+$password = "pass";             // Password with your username
+$dbname = "database";           // Database Name
+```
 
 ### Usage
 
