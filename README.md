@@ -20,23 +20,27 @@ $dbname = "database";           // Database Name
 
 ### Usage
 
-If you want to redirect to http://www.google.com, just visit
+If you want to redirect to https://www.google.com, just visit
 
-    http://example.com/redirect.php?forward=http://www.google.com
+    https://example.com/redirect.php?forward=https://www.google.com
 
 To see click records, just visit
 
-    http://example.com/clicks.php
+    https://example.com/clicks.php
+
+If no `http` or `https` query is in the forward string, `http://` will be automatically added. 
+
+Use `//www.google.com` if you do not want to specify a query type. 
 
 ### Demo
 
 To create/update a record and redirect to a url:
 
-[http://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com](http://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com)
+[https://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com](https://demo.steve-luo.com/php-redirect-click-counter/redirect.php?forward=https://www.google.com)
 
 To view records:
 
-[http://demo.steve-luo.com/php-redirect-click-counter/clicks.php](http://demo.steve-luo.com/php-redirect-click-counter/clicks.php)
+[https://demo.steve-luo.com/php-redirect-click-counter/clicks.php](https://demo.steve-luo.com/php-redirect-click-counter/clicks.php)
 
 ### License
 

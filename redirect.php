@@ -22,7 +22,30 @@ $dbname = "database";           // Database Name
 
 
 // Get url input
-$redirectUrl = $_GET['forward'];
+$inputUrl = $_GET['forward'];
+
+// Format input URL for recording and redirecting
+if (stripos($inputUrl, "http://") === 0) {
+
+	$redirectUrl = $inputUrl;
+	$recordUrl = substr($inputUrl, strlen("http://"));
+
+} elseif (stripos($inputUrl, "https://") === 0) {
+
+	$redirectUrl = $inputUrl;
+	$recordUrl = substr($inputUrl, strlen("https://"));
+
+} elseif (stripos($inputUrl, "//") === 0) {
+
+	$redirectUrl = $inputUrl;
+	$recordUrl = substr($inputUrl, strlen("//"));
+
+} else {
+
+	$redirectUrl = "http://" . $inputUrl;
+	$recordUrl = $inputUrl;
+
+}
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -49,10 +72,11 @@ if ($conn->query($sql) === TRUE) {
 	// Insert new row
 	//echo "Inserting...<br>";
 	$sql = "INSERT INTO ClickRecord (Url, Clicks)
-	VALUES ('$redirectUrl', '1')";
+	VALUES ('$recordUrl', '1')";
 
 	// Check if row added successfully
 	if ($conn->query($sql) === TRUE) {
+		
 		//echo "Checking Row...<br>";
 
 	} else {
@@ -62,10 +86,11 @@ if ($conn->query($sql) === TRUE) {
 		// Updating existing row
 		//echo "Checking Row...<br>";
 		//echo "Updating...<br>";
-		$sql = "UPDATE ClickRecord SET Clicks=Clicks+1 WHERE Url='{$redirectUrl}'";
+		$sql = "UPDATE ClickRecord SET Clicks=Clicks+1 WHERE Url='{$recordUrl}'";
 
 		// Check if row updated successfully
 		if ($conn->query($sql) === TRUE) {
+
 			//echo "Record updated successfully";
 
 		} else {
@@ -80,7 +105,7 @@ if ($conn->query($sql) === TRUE) {
 
 	//echo "Updating Existing Record...<br>";
 	
-	$sql = "SELECT Url FROM ClickRecord WHERE Url='{$redirectUrl}'";
+	$sql = "SELECT Url FROM ClickRecord WHERE Url='{$recordUrl}'";
 	$checkResult = $conn->query($sql);
 
 	if ($checkResult->num_rows == 1) {
@@ -92,10 +117,10 @@ if ($conn->query($sql) === TRUE) {
 
 		}
 
-			if ($output == $redirectUrl) {
+			if ($output == $recordUrl) {
 
 				// Updating existing row
-				$sql = "UPDATE ClickRecord SET Clicks=Clicks+1 WHERE Url='{$redirectUrl}'";
+				$sql = "UPDATE ClickRecord SET Clicks=Clicks+1 WHERE Url='{$recordUrl}'";
 
 				// Check if row updated successfully
 				if ($conn->query($sql) === TRUE) {
@@ -114,7 +139,7 @@ if ($conn->query($sql) === TRUE) {
 
 		// Insert new row
 		$sql = "INSERT INTO ClickRecord (Url, Clicks)
-		VALUES ('$redirectUrl', '1')";
+		VALUES ('$recordUrl', '1')";
 
 		// Check if row added successfully
 		if ($conn->query($sql) === TRUE) {
@@ -135,7 +160,7 @@ header("Location: ".$redirectUrl);
 
 /*
 
-	Written by Steve-luo <http://www.steve-luo.com>
+	Written by Steve-luo <https://steve-luo.com>
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
