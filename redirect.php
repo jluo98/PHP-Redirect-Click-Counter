@@ -58,7 +58,7 @@ if ($conn->connect_error) {
 } 
 
 // sql to create table
-$sql = "CREATE TABLE ClickRecord (
+$sql = "CREATE TABLE IF NOT EXISTS ClickRecord (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 Url TEXT NOT NULL,
 Clicks INT UNSIGNED NOT NULL
